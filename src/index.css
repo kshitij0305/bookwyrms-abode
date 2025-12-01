@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* Global */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0d0e14;
+  color: #e8d9a1;
+  font-family: "Merriweather", serif;
+}
+
+* {
+  text-shadow: 0 0 1px rgba(0,0,0,0.2);
+}
+
+/* Rotations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes spin-very-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 70s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 110s linear infinite;
+}
+
+.animate-spin-very-slow {
+  animation: spin-very-slow 180s linear infinite;
+}
+
+/* Runes */
+@keyframes runeGlow {
+  0% { opacity: 0.35; filter: drop-shadow(0 0 2px #f2d98a40); }
+  50% { opacity: 1; filter: drop-shadow(0 0 10px #f2d98acb); }
+  100% { opacity: 0.35; filter: drop-shadow(0 0 2px #f2d98a40); }
+}
+
+.rune-glow {
+  animation: runeGlow 6s ease-in-out infinite;
+}
+
+/* Particles */
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 0.85; }
+  100% { transform: translateY(-130vh); opacity: 0; }
+}
+
+.animate-floatUp {
+  animation: floatUp linear infinite;
+}
+
+/* Flicker */
+@keyframes candleFlicker {
+  0% { opacity: 0.9; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.12); }
+  100% { opacity: 0.9; filter: brightness(1); }
+}
+
+.candle-flicker {
+  animation: candleFlicker 4s ease-in-out infinite;
+}
+
+/* Spell Hover */
+.spell-hover {
+  transition: all 0.3s ease;
+}
+
+.spell-hover:hover {
+  box-shadow: 0 0 25px rgba(242,217,138,0.5),
+              0 0 55px rgba(242,217,138,0.25);
+  transform: translateY(-3px) scale(1.04);
+}
+
+/* 3D Cards */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-3d:hover {
+  transform: perspective(650px) rotateX(6deg) rotateY(-6deg);
+  box-shadow: 0 0 35px rgba(242,217,138,0.25);
+}
+
+/* Optional Gradient */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+/* extra blur animation */
+@keyframes glowPulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.12); }
+}
+
+.drawer-ambient {
+  animation: glowPulse 6s ease-in-out infinite;
+}
