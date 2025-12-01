@@ -1,69 +1,82 @@
 import ScrollAnimator from "./ScrollAnimator";
-import logo from "../assets/logo.png";
+import Logo from "../assets/logo.png";
 
 export default function About() {
   return (
     <section
       id="about"
-      className="relative py-28 px-6 md:px-12 lg:px-24 text-[#e8d9a1] mt-24"
+      className="relative py-24 px-6 text-[#e8d9a1]"
     >
-      {/* Divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-[2px] bg-yellow-300/40"></div>
-
-      {/* Title */}
-      <ScrollAnimator direction="up" distance={60}>
-        <h2 className="text-center text-3xl md:text-5xl font-bold tracking-wide mb-16">
+      {/* ARCANE BOX WRAPPER */}
+      <div
+        className="
+          max-w-6xl mx-auto 
+          rounded-3xl 
+          bg-[#0c0c11]/40 
+          border border-yellow-300/20 
+          backdrop-blur-xl 
+          shadow-[0_0_50px_rgba(242,217,138,0.25)]
+          p-10 md:p-16
+        "
+      >
+        {/* TITLE */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-14">
           <span className="text-yellow-300">About</span> Bookwyrm’s Abode
         </h2>
-      </ScrollAnimator>
 
-      {/* MOBILE-FRIENDLY FLEX FIX */}
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-14 md:gap-20">
+        {/* FLEX WRAPPER */}
+        <div
+          className="
+            flex flex-col md:flex-row 
+            items-center md:items-start 
+            gap-10 md:gap-16
+          "
+        >
 
-        {/* LOGO */}
-        <ScrollAnimator direction="up" distance={50}>
-          <div className="relative group flex justify-center md:justify-start w-full md:w-auto">
-            
-            {/* Rotating ring */}
-            <div className="absolute inset-0 animate-spin-slow opacity-25">
-              <div className="w-[220px] h-[220px] md:w-[260px] md:h-[260px] rounded-full border border-yellow-300/25"></div>
+          {/* ROUND LOGO CONTAINER */}
+          
+        <div
+          className="
+            aspect-square
+            w-56 md:w-72
+            rounded-full 
+             bg-[#0c0c11]/60 
+            border border-yellow-300/20
+            shadow-[0_0_40px_rgba(255,230,150,0.18)]
+            flex items-center justify-center
+            shrink-0
+            mx-auto md:mx-0
+            "
+        >
+            <img
+            src={Logo}
+            alt="Bookwyrm Logo"
+            className="w-[85%] h-[85%] object-contain rounded-full"
+            />
             </div>
 
-            {/* Glow */}
-            <div className="absolute inset-0 blur-2xl bg-yellow-300/10 rounded-full"></div>
 
-            <img 
-              src={logo}
-              alt="Bookwyrm Logo"
-              className="w-[220px] h-[220px] md:w-[260px] md:h-[260px] relative z-10 rounded-full shadow-[0_0_40px_rgba(242,217,138,0.25)]"
-            />
-          </div>
-        </ScrollAnimator>
-
-        {/* TEXT */}
-        <ScrollAnimator direction="right" distance={60}>
-          <div className="max-w-xl text-lg leading-relaxed tracking-wide space-y-6 text-center md:text-left px-2">
-
-            <p>
-              <span className="text-yellow-300 font-semibold">Bookwyrm’s Abode</span>{" "}
-              is a sanctuary for seekers of knowledge, explorers of stories, and
+          {/* TEXT */}
+          <div className="text-lg md:text-xl leading-relaxed md:max-w-3xl text-center md:text-left">
+            <p className="mb-6">
+              <span className="text-yellow-300 font-semibold">Bookwyrm’s Abode</span>
+              &nbsp;is a sanctuary for seekers of knowledge, explorers of worlds, and
               those who feel the ancient pull of lore and legend.
             </p>
 
-            <p>
-              Our emblem — a winged tome rising above the Tree of Stories —
-              represents our mission to celebrate the magic of reading and guide
-              adventurers toward their next unforgettable tale.
+            <p className="mb-6">
+              Our emblem — a winged tome rising above the Tree of Stories — reflects
+              our mission: to celebrate the magic of reading and guide adventurers
+              toward their next unforgettable tale.
             </p>
 
             <p>
-              Whether your heart seeks mystic realms, heroic sagas, or quiet escapes,
-              your journey begins here.
+              Whether your heart seeks mystic realms, heroic sagas, or peaceful
+              escapes, your journey begins here.
             </p>
-
           </div>
-        </ScrollAnimator>
 
+        </div>
       </div>
     </section>
   );
